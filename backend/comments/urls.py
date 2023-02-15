@@ -4,7 +4,8 @@ from comments import views
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 urlpatterns = [
-    path('', views.user_comments),
-    path('all/', views.get_video_comments),
-    path('<int:pk>/', views.update_comment),
+    path('', views.get_video_comments),
+    path('<int:comment_id>/', views.update_comment),
+    path('<int:comment_id>/', views.create_comment),
+    path('<int:comment_id>/replies/', include('replies.urls')),
 ]

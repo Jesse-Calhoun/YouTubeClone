@@ -20,7 +20,7 @@ def get_video_comments(request, video_id):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-def user_comments(request):
+def create_comment(request):
     print(
         'User', f"{request.user.id,}{request.user.email} {request.user.username}"
         )
@@ -33,8 +33,11 @@ def user_comments(request):
     
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-def update_comment(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
+def update_comment(request, comment_id):
+    print(
+        'User', f"{request.user.id,}{request.user.email} {request.user.username}"
+    )
+    comment = get_object_or_404(Comment, pk=comment_id)
     if request.method == 'PUT':
         # comments = Comment.objects.filter(user_id=request.user.id)
         serializer = CommentSerializer(comment, data=request.data)

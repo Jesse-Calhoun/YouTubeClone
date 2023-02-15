@@ -22,7 +22,6 @@ urlpatterns = [
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('cars.urls')),
     path('api/<str:video_id>/comments/', include('comments.urls')),
-    path('api/<str:video_id>/comments/', include('replies.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
