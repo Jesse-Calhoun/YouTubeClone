@@ -12,9 +12,9 @@ from .serializers import CommentSerializer
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_all_comments(request):
+def get_video_comments(request, video_id):
     if request.method == 'GET':
-        comments = Comment.objects.all()
+        comments = Comment.objects.filter(video_id=video_id)
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

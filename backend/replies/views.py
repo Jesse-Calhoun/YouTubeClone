@@ -11,7 +11,7 @@ from .serializers import ReplySerializer
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_all_replies(request, comment_id):
+def get_all_replies(request, video_id, comment_id):
     # comment = get_object_or_404(Comment, pk=pk)
     if request.method == 'GET':
         replies = Reply.objects.filter(comment_id=comment_id)
