@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework import status
@@ -18,7 +18,7 @@ def get_all_comments(request):
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-@api_view(['GET', 'POST'])
+@api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def user_comments(request):
     print(
@@ -30,7 +30,15 @@ def user_comments(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
-        comments = Comment.objects.filter(user_id=request.user.id)
-        serializer = CommentSerializer(comments, many=True)
-        return Response(serializer.data)
+    
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def update_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.method == 'PUT':
+        # comments = Comment.objects.filter(user_id=request.user.id)
+        serializer = CommentSerializer(comment, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
