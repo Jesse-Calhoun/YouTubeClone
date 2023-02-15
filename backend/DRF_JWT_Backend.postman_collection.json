@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
+		"_postman_id": "fdea789b-d2e4-48bf-acd1-1f34d694a2c1",
 		"name": "DRF_JWT_Backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25207481"
 	},
 	"item": [
 		{
@@ -151,7 +152,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MjY4OTQ0LCJpYXQiOjE2NzY0MDQ5NDQsImp0aSI6ImQ1MDVhZGNmMjUxYzRjY2M4ZDc3OGFhNjg1Yjc2NzhiIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.81isdiIj4I5mDOsAdv_Y4c-kc9oIIRax5G7DIrCDUMg",
 								"type": "text"
 							}
 						],
@@ -216,6 +217,65 @@
 							"path": [
 								"api",
 								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get all comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/comments/all/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by user_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzQ1MTc0LCJpYXQiOjE2NzY0ODExNzQsImp0aSI6ImRkYWJjNWNhODk5MzQyZjVhMjkyNWM0NmVmMTQ2ZjA1IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJKZXNzZWphbWVzMjczNiIsImZpcnN0X25hbWUiOiIifQ._UVh_e-cD2ZI0cuF5YFYcrjJi6pBmnNJ5UCz1YdixjM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzQ1NDc4LCJpYXQiOjE2NzY0ODE0NzgsImp0aSI6IjEzMTQzZjBmN2M1NDQ4YTdhMGE1NzY4NTRmOGFhMmMyIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.ohQYRx1fi7tiSIO9WmIphYrnDn-xeVIYj1OPSyMsGFk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
 								""
 							]
 						}
