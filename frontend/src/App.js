@@ -10,6 +10,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import VideoPage from "./components/VideoPage/VideoPage";
+import SearchPage from "./components/SearchPage/SearchPage";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -24,6 +26,8 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+              <VideoPage/>
+              <SearchPage/>
             </PrivateRoute>
           }
         />
