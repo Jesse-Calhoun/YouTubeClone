@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d16b1956-99a8-4088-a27f-cda58380c3c9",
+		"_postman_id": "1b3c1e96-b376-4a33-9bf6-7ec25eebc58d",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "25207088"
+		"_exporter_id": "25207481"
 	},
 	"item": [
 		{
@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"username\": \"JesseJames2736\",\r\n    \"password\": \"Jimafer2736!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/qLooSc5ewIA/comments/all/",
+							"raw": "http://localhost:8000/api/c15ETZQg8EM/comments/all/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -242,48 +242,9 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"qLooSc5ewIA",
+								"c15ETZQg8EM",
 								"comments",
 								"all",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get by user_id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzQ1MTc0LCJpYXQiOjE2NzY0ODExNzQsImp0aSI6ImRkYWJjNWNhODk5MzQyZjVhMjkyNWM0NmVmMTQ2ZjA1IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJKZXNzZWphbWVzMjczNiIsImZpcnN0X25hbWUiOiIifQ._UVh_e-cD2ZI0cuF5YFYcrjJi6pBmnNJ5UCz1YdixjM",
-								"type": "text",
-								"disabled": true
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzQ1NDc4LCJpYXQiOjE2NzY0ODE0NzgsImp0aSI6IjEzMTQzZjBmN2M1NDQ4YTdhMGE1NzY4NTRmOGFhMmMyIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.ohQYRx1fi7tiSIO9WmIphYrnDn-xeVIYj1OPSyMsGFk",
-								"type": "text",
-								"disabled": true
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzUyMTYyLCJpYXQiOjE2NzY0ODgxNjIsImp0aSI6IjQ1MDQ1OGZlNTQzMTQ0NGI4MDg1ODkxMDlmNGVkNGRkIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJKYWNrMyIsImZpcnN0X25hbWUiOiIifQ.zZpLfAejL1FaV9yx9srK9CB-9zfYHWdHBY1a9d3ngas",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8000/api/comments/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"comments",
 								""
 							]
 						}
@@ -326,6 +287,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -333,18 +302,24 @@
 			"name": "Replies",
 			"item": [
 				{
-					"name": "Get replies by id (protected)",
+					"name": "Get replies by comment_id (protected)",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzUyMTYyLCJpYXQiOjE2NzY0ODgxNjIsImp0aSI6IjQ1MDQ1OGZlNTQzMTQ0NGI4MDg1ODkxMDlmNGVkNGRkIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJKYWNrMyIsImZpcnN0X25hbWUiOiIifQ.zZpLfAejL1FaV9yx9srK9CB-9zfYHWdHBY1a9d3ngas",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzU5MzEwLCJpYXQiOjE2NzY0OTUzMTAsImp0aSI6ImJmNzNlZTExNGUwNjQzMWZiMzNhYzdmYzE3ZjFmYzlmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJKZXNzZWphbWVzMjczNiIsImZpcnN0X25hbWUiOiIifQ.cux9szmMhqa4pTIsZzHQruRMeNJ1M6zP-oW5R8G15p4",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/qLooSc5ewIA/comments/2/replies/",
+							"raw": "http://localhost:8000/api/c15ETZQg8EM/comments/3/replies/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -352,9 +327,9 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"qLooSc5ewIA",
+								"c15ETZQg8EM",
 								"comments",
-								"2",
+								"3",
 								"replies",
 								""
 							]
