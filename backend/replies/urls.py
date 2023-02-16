@@ -4,5 +4,5 @@ from replies import views
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 urlpatterns = [
-    path('', views.get_all_replies),
+    path('', views.process_replies),
 ]
