@@ -23,7 +23,7 @@ def get_video_comments(request, video_id):
 def create_comment(request, video_id):
     serializer = CommentSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
-    serializer.save(user=request.user)
+    serializer.save(user=request.user, video_id=video_id)
     return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 @api_view(['PUT'])
