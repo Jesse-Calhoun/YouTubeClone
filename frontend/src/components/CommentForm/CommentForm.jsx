@@ -1,7 +1,14 @@
 const CommentForm = ({}) => {
     return ( 
         <div>
-            pass
+            {/* <Route
+          path="/"
+          element={
+            <PrivateRoute>
+                           
+            </PrivateRoute>
+          }
+        />  */}
         </div>
      );
 }
