@@ -5,21 +5,16 @@ import React, { useState, useEffect } from 'react';
 const SearchBar = ({videos, getVideoResults, setSearchTerms, searchTerms}) => {
     
 
-    function handleSearch(){
+    function handleSearch(event){
         event.preventDefault();
-        let newVideoResults = {
-            title,
-            video_id,
-        }
-        setSearchTerms()
-        getVideoResults()
+        getVideoResults();
     }
 
     return ( 
-        <div >
-            <input type='search' onCh />
-            <button type='submit' onClick={pass}>Search</button>
-        </div>
+        <form onSubmit={handleSearch}>
+            <input type='search' onChange={(event) => setSearchTerms(event.target.value)} value={searchTerms} />
+            <button type='submit'>Search</button>
+        </form>
      );
 }
  
