@@ -1,6 +1,8 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import React, { useState } from 'react';
+
 
 // Pages Imports
 // import HomePage from "./pages/HomePage/HomePage";
@@ -17,26 +19,33 @@ import Footer from "./components/Footer/Footer";
 // import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
-  return (
-    <div>
+
+  const [selectedVideo, setSelectedVideo] = useState({})
+  const [videoPageUrl, setVideoPageUrl] = useState('')
+  if (selectedVideo){
+    // setVideoPageUrl()`/watch/${selectedVideo.id.videoId}`
+    
+    return (
+      <div>
       <Navbar />
       <Routes>
         {/* <Route
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />             
+            <HomePage />             
             </PrivateRoute>
           }
         /> */}
-        <Route path='/' element={<SearchPage/>}/>
-        <Route path='/watch' element={<VideoPage />}/>
+        <Route path='/' element={<SearchPage setSelectedVideo={setSelectedVideo} selectedVideo={selectedVideo} videoPageUrl={videoPageUrl} setVideoPageUrl={setVideoPageUrl}/>}/>
+        <Route path={videoPageUrl} element={<VideoPage selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
     </div>
   );
+}
 }
 
 export default App;

@@ -3,10 +3,11 @@ import CommentForm from '../../components/CommentForm/CommentForm';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 
-const VideoPage = ({}) => {
+const VideoPage = ({ selectedVideo, setSelectedVideo }) => {
+    
     return ( 
         <div>
-            <VideoPlayer/>
+            <VideoPlayer selectedVideo={selectedVideo}/>
             <CommentList/>
             <CommentForm/>
             <RelatedVideos/>

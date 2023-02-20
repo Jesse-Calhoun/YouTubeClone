@@ -3,7 +3,7 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import axios from 'axios';
 import VideoThumbnail from '../../components/VideoThumbnail/VideoThumbnail';
 
-const SearchPage = ({}) => {
+const SearchPage = ({ setSelectedVideo, selectedVideo, videoPageUrl, setVideoPageUrl }) => {
     const [videos, setVideos] = useState([])
     const [searchTerms, setSearchTerms] = useState('dog')
 
@@ -18,7 +18,7 @@ const SearchPage = ({}) => {
     return ( 
         <div>
             <SearchBar  getVideoResults={getVideoResults} setSearchTerms={setSearchTerms} searchTerms={searchTerms} />
-            <VideoThumbnail videos={videos}/>
+            <VideoThumbnail videos={videos} selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} videoPageUrl={videoPageUrl} setVideoPageUrl={setVideoPageUrl} />
         </div>
      );
 }
