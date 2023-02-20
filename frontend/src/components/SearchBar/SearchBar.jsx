@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 
 
-const SearchBar = ({videos, getVideoResults, setSearchTerms, searchTerms}) => {
+const SearchBar = ({ getVideoResults, setSearchTerms, searchTerms}) => {
     
 
     function handleSearch(event){

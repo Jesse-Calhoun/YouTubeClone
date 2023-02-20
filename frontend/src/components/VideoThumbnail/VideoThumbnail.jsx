@@ -9,11 +9,11 @@ const VideoThumbnail = ({ videos }) => {
         return ( 
             <div>
                 {videos.map((video)=>{
-                    let {url, width, height} = video.snippet.thumbnails.default
+                    let {url, width, height} = video.snippet.thumbnails.medium
                     return(
                         <Link to='/watch' >
                             <p>{video.snippet.title}</p>
-                            <iframe width={width} height={height} src={url} frameborder='0' allowfullscreen ></iframe>
+                            <iframe width={width} height={height} src={url} frameborder='0'></iframe>
                         </Link>
                     )
                 })}

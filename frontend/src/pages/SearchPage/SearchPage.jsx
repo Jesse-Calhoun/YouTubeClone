@@ -17,7 +17,7 @@ const SearchPage = ({}) => {
 
     return ( 
         <div>
-            <SearchBar videos={videos} getVideoResults={getVideoResults} setSearchTerms={setSearchTerms} searchTerms={searchTerms} />
+            <SearchBar  getVideoResults={getVideoResults} setSearchTerms={setSearchTerms} searchTerms={searchTerms} />
             <VideoThumbnail videos={videos}/>
         </div>
      );
