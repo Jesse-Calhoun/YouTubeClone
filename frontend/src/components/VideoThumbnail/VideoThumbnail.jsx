@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const VideoThumbnail = ({ videos, setSelectedVideo, selectedVideo, videoPageUrl, setVideoPageUrl }) => {
+const VideoThumbnail = ({ videos }) => {
     
     
     if (videos){
@@ -10,15 +10,9 @@ const VideoThumbnail = ({ videos, setSelectedVideo, selectedVideo, videoPageUrl,
             <div>
                 {videos.map((video)=>{
                     let { url, width, height } = video.snippet.thumbnails.medium;
-
-                    setVideoPageUrl(`/watch/${video.id.videoId}`);
-
-                    function handleSelectedVideo(){
-                        setSelectedVideo(video);
-                    }
                     
                     return(
-                        <Link to={videoPageUrl} onClick={handleSelectedVideo} >
+                        <Link to={`/watch/${video.id.videoId}`}>
                             <p>{video.snippet.title}</p>
                             <iframe width={width} height={height} src={url}></iframe>
                         </Link>

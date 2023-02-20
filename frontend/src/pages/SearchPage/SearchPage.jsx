@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar'
 import axios from 'axios';
 import VideoThumbnail from '../../components/VideoThumbnail/VideoThumbnail';
 
-const SearchPage = ({ setSelectedVideo, selectedVideo, videoPageUrl, setVideoPageUrl }) => {
+const SearchPage = ({ }) => {
     const [videos, setVideos] = useState([]);
-    const [searchTerms, setSearchTerms] = useState('dog');
+    const [searchTerms, setSearchTerms] = useState('');
 
     async function getVideoResults() {
-        let url = `https://youtube.googleapis.com/youtube/v3/search?maxResults=10&type=video&part=snippet&q=${searchTerms}&key=AIzaSyCycwRp8jsBioiuo047cSluFXpZKK4qGPU`;
+        let url = `https://youtube.googleapis.com/youtube/v3/search?maxResults=10&type=video&part=snippet&q=${searchTerms}&key=AIzaSyBWX8kjBe9QA7018GxCstMEA3sKaAkr0zM`;
         let response = await axios.get(url);
         setVideos(response.data.items);
     }
@@ -17,7 +17,7 @@ const SearchPage = ({ setSelectedVideo, selectedVideo, videoPageUrl, setVideoPag
     return ( 
         <div>
             <SearchBar  getVideoResults={getVideoResults} setSearchTerms={setSearchTerms} searchTerms={searchTerms} />
-            <VideoThumbnail videos={videos} selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} videoPageUrl={videoPageUrl} setVideoPageUrl={setVideoPageUrl} />
+            <VideoThumbnail videos={videos} />
         </div>
      );
 }
