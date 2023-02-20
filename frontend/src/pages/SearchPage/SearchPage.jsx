@@ -8,7 +8,7 @@ const SearchPage = ({ }) => {
     const [searchTerms, setSearchTerms] = useState('');
 
     async function getVideoResults() {
-        let url = `https://youtube.googleapis.com/youtube/v3/search?maxResults=10&type=video&part=snippet&q=${searchTerms}&key=AIzaSyBWX8kjBe9QA7018GxCstMEA3sKaAkr0zM`;
+        let url = `https://youtube.googleapis.com/youtube/v3/search?maxResults=10&type=video&part=snippet&q=${searchTerms}&key=AIzaSyBjwDkO_LaPB5Cbs-Sk2eAWKQpoDd1SL4c`;
         let response = await axios.get(url);
         setVideos(response.data.items);
     }

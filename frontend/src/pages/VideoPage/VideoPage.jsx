@@ -13,19 +13,19 @@ const VideoPage = ({ }) => {
     const [ video, setVideo ] = useState(null)
 
     async function getVideo() {
-        let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyBWX8kjBe9QA7018GxCstMEA3sKaAkr0zM`
+        let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyBjwDkO_LaPB5Cbs-Sk2eAWKQpoDd1SL4c`
         let response = await axios.get(url);
         setVideo(response.data.items[0]);
     }
 
     useEffect(()=>{
         getVideo();
-    }, [])
+    }, [videoId])
 
     return ( 
         <div>
             <VideoPlayer selectedVideo={video}/>
-            <RelatedVideos videoId={videoId} getVideo={getVideo}/>
+            <RelatedVideos videoId={videoId} setVideo={setVideo}/>
             <CommentList/>
             <CommentForm/>
         </div>

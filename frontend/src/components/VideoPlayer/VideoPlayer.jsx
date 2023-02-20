@@ -12,7 +12,7 @@ const VideoPlayer = ({ selectedVideo }) => {
             
             );
         }
-    return null;
+    return null
 }
  
 export default VideoPlayer;
