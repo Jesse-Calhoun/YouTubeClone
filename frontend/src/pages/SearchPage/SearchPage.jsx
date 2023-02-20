@@ -4,14 +4,13 @@ import axios from 'axios';
 import VideoThumbnail from '../../components/VideoThumbnail/VideoThumbnail';
 
 const SearchPage = ({ setSelectedVideo, selectedVideo, videoPageUrl, setVideoPageUrl }) => {
-    const [videos, setVideos] = useState([])
-    const [searchTerms, setSearchTerms] = useState('dog')
+    const [videos, setVideos] = useState([]);
+    const [searchTerms, setSearchTerms] = useState('dog');
 
     async function getVideoResults() {
         let url = `https://youtube.googleapis.com/youtube/v3/search?maxResults=10&type=video&part=snippet&q=${searchTerms}&key=AIzaSyCycwRp8jsBioiuo047cSluFXpZKK4qGPU`;
         let response = await axios.get(url);
-        console.log(response.data.items)
-        setVideos(response.data.items)
+        setVideos(response.data.items);
     }
 
 

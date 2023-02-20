@@ -1,7 +1,26 @@
-const RelatedVideos = ({}) => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+
+const RelatedVideos = ({ relatedVideos, selectedVideo, setSelectedVideo, videoPageUrl, setVideoPageUrl }) => {
+
     return ( 
         <div>
-            pass
+            {relatedVideos.map((relatedVideo)=>{
+                let { url, width, height } = relatedVideo.snippet.thumbnails.default;
+
+                // setVideoPageUrl(`/watch/${relatedVideo.id.videoId}`);
+                
+                function handleRelatedVideo(){
+                    setSelectedVideo(relatedVideo);
+                }
+            
+
+            <Link to={`/watch/${relatedVideo.id.videoId}`} onClick={handleRelatedVideo} >
+                <p>{relatedVideo.snippet.title}</p>
+                <iframe width={width} height={height} src={url}></iframe>
+            </Link>
+            })}
         </div>
      );
 }

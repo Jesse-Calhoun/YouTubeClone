@@ -38,7 +38,7 @@ function App() {
           }
         /> */}
         <Route path='/' element={<SearchPage setSelectedVideo={setSelectedVideo} selectedVideo={selectedVideo} videoPageUrl={videoPageUrl} setVideoPageUrl={setVideoPageUrl}/>}/>
-        <Route path={videoPageUrl} element={<VideoPage selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />}/>
+        <Route path={videoPageUrl} element={<VideoPage selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} videoPageUrl={videoPageUrl} setVideoPageUrl={setVideoPageUrl}/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

@@ -6,15 +6,15 @@ const VideoThumbnail = ({ videos, setSelectedVideo, selectedVideo, videoPageUrl,
     
     
     if (videos){
-        let videoUrl;
         return ( 
             <div>
                 {videos.map((video)=>{
-                    let {url, width, height} = video.snippet.thumbnails.medium
+                    let { url, width, height } = video.snippet.thumbnails.medium;
 
-                    setVideoPageUrl(`/watch/${video.id.videoId}`)
+                    setVideoPageUrl(`/watch/${video.id.videoId}`);
+
                     function handleSelectedVideo(){
-                        setSelectedVideo(video)
+                        setSelectedVideo(video);
                     }
                     
                     return(
