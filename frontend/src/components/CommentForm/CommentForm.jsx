@@ -24,6 +24,7 @@ const CommentForm = ({ videoId, user, token, config }) => {
           dislikes: 0,
       };
       addNewComment(newComment);
+      setComment('')
     }
     else{
       alert('Must be signed in to comment.')
