@@ -1,3 +1,8 @@
 .comment-bar {
     width: 75%;
+    height: 75px;
+}
+
+.comment-form {
+    display: flex;
 }
