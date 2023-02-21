@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-// import useAuth from "../../hooks/useAuth";
+import './CommentForm.css';
+
 
 const CommentForm = ({ videoId, user, token, config }) => {
 
@@ -33,7 +34,7 @@ const CommentForm = ({ videoId, user, token, config }) => {
   return (
         <form onSubmit={handleNewComment}>
           <label>Comment</label>
-          <input placeholder="Must be signed in to comment." value={comment} onChange={(event) => setComment(event.target.value)}/>
+          <input placeholder="Must be signed in to comment." value={comment} onChange={(event) => setComment(event.target.value)} className='comment-bar'/>
           <button type='submit'>Post</button>
         </form>
       );

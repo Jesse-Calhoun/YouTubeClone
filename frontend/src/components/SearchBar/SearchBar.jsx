@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SearchBar.css'
 
 
 
@@ -12,7 +13,7 @@ const SearchBar = ({ getVideoResults, setSearchTerms, searchTerms}) => {
 
     return ( 
         <form onSubmit={handleSearch}>
-            <input type='search' onChange={(event) => setSearchTerms(event.target.value)} value={searchTerms} />
+            <input type='search' onChange={(event) => setSearchTerms(event.target.value)} value={searchTerms} className='search-bar'/>
             <button type='submit'>Search</button>
         </form>
      );

@@ -6,16 +6,16 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from "../../hooks/useAuth";
 import { useParams } from 'react-router-dom';
+import './VideoPage.css'
 
 const VideoPage = ({ }) => {
     
     const { videoId } = useParams();
     const [ video, setVideo ] = useState(null)
-    // const [comments, setComments] = useState([]);
     const { user, token, config } = useAuth();
 
     async function getVideo() {
-        let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyBjwDkO_LaPB5Cbs-Sk2eAWKQpoDd1SL4c`
+        let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyBWX8kjBe9QA7018GxCstMEA3sKaAkr0zM`
         let response = await axios.get(url);
         setVideo(response.data.items[0]);
     }
@@ -25,53 +25,24 @@ const VideoPage = ({ }) => {
     }, [videoId])
 
 
-    // async function addNewComment(newComment) {
-    //     let url = "http://127.0.0.1:8000/api/" + videoId + "/comments/add_comment/";
-    //     let response = await axios.post(url, newComment, config);
-    //     console.log(response)
-    //   }
 
-    if (token){
-        return ( 
-            <div>
-                <div>
-                    <div className='col-xs-7 container'>
-                        <VideoPlayer selectedVideo={video}/>
-                    </div>
-                    <div className='col-xs-5 container'>
-                        <RelatedVideos videoId={videoId} setVideo={setVideo}/>
-                    </div>
+    return ( 
+        <div>
+            <div className='flex-container'>
+                <div className='col-xs-7 container'>
+                    <VideoPlayer selectedVideo={video}/>
                 </div>
-                <div>
-                    <CommentForm videoId={videoId} user={user} token={token} config={config} />
-                </div>
-                <div>
-                    <CommentList videoId={videoId} />
+                <div className='col-xs-5 container'>
+                    <RelatedVideos videoId={videoId} setVideo={setVideo}/>
                 </div>
             </div>
-        );
-    }
-    else{
-        return ( 
-            <div>
-                <div className='container-fluid'>
-                    <div className='col-xs-7 '>
-                        <VideoPlayer selectedVideo={video}/>
-                    </div>
-                    <div className='col-xs-5 '>
-                        <RelatedVideos videoId={videoId} setVideo={setVideo}/>
-                    </div>
-                </div>
-                <div className='col-xs-12'>
-                    <h3>Must Be Signed in to Comment</h3>
-                    <CommentList videoId={videoId} />
-                </div>
-                {/* <CommentForm videoId={videoId} user={user} token={token} config={config} /> */}
-                {/* <div className=''>
-                </div> */}
+            <div className='col-xs-12'>
+                {token ?  <CommentForm videoId={videoId} user={user} token={token} config={config} /> :  <h3>Must Be Signed in to Comment</h3>}
+                <CommentList videoId={videoId} />
             </div>
-        );
-    }
+        </div>
+    );
 }
+
  
 export default VideoPage;
