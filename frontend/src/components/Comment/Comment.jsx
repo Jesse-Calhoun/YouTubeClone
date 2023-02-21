@@ -1,12 +1,13 @@
-import ReplyForm from '../ReplyForm/ReplyForm';
-import ReplyList from '../ReplyList/ReplyList'
+// import ReplyForm from '../ReplyForm/ReplyForm';
+// import ReplyList from '../ReplyList/ReplyList'
 
 
-const Comment = ({}) => {
+const Comment = ({ comment }) => {
     return ( 
         <div>
-            <ReplyList/>
-            <ReplyForm/>
+            <h3>User: {comment.username}</h3>
+            <p>{comment.text}</p>
+            <p>Likes:{comment.likes}   Dislikes:{comment.dislikes}</p>
         </div>
      );
 }

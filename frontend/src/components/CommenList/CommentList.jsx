@@ -15,10 +15,13 @@ const CommentList = ({ videoId }) => {
     useEffect(()=>{
         getAllComments();
     }, [comments])
+
+    let commentList = comments.map((comment) => <Comment comment={comment}/>)
     
     return ( 
         <div>
-            <Comment/>
+            <h2>Comments List</h2>
+            {commentList}
         </div>
      );
 }
