@@ -21,7 +21,7 @@ const CommentList = ({ videoId }) => {
     return ( 
         <div>
             <h2>Comments List</h2>
-            {commentList}
+            {commentList.reverse()}
         </div>
      );
 }
