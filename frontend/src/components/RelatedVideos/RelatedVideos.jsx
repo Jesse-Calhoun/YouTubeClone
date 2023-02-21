@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './RelatedVideos.css'
 
 
 const RelatedVideos = ({ videoId, setVideo }) => {
@@ -33,10 +34,12 @@ const RelatedVideos = ({ videoId, setVideo }) => {
                 // }
 
                 return (
-                    <Link to={`/watch/${relatedVideo.id.videoId}`} >
-                        <p>{relatedVideo.snippet.title}</p>
-                        <iframe width={width} height={height} src={url}></iframe>
-                    </Link>
+                    <div >
+                        <Link className='flex-container' to={`/watch/${relatedVideo.id.videoId}`} >
+                            <iframe width={width} height={height} src={url}></iframe>
+                            <p>{relatedVideo.snippet.title}</p>
+                        </Link>
+                    </div>
                 )
             })}
         </div>

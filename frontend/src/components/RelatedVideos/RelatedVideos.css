@@ -1,0 +1,8 @@
+p{
+    font-size: small;
+}
+
+.flex-container{
+    display: flexbox;
+    justify-content: space-between;
+}

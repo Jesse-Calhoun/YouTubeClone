@@ -34,21 +34,41 @@ const VideoPage = ({ }) => {
     if (token){
         return ( 
             <div>
-                <VideoPlayer selectedVideo={video}/>
-                <RelatedVideos videoId={videoId} setVideo={setVideo}/>
-                <CommentForm videoId={videoId} user={user} token={token} config={config} />
-                <CommentList videoId={videoId} />
+                <div>
+                    <div className='col-xs-7 container'>
+                        <VideoPlayer selectedVideo={video}/>
+                    </div>
+                    <div className='col-xs-5 container'>
+                        <RelatedVideos videoId={videoId} setVideo={setVideo}/>
+                    </div>
+                </div>
+                <div>
+                    <CommentForm videoId={videoId} user={user} token={token} config={config} />
+                </div>
+                <div>
+                    <CommentList videoId={videoId} />
+                </div>
             </div>
         );
     }
     else{
         return ( 
             <div>
-                <VideoPlayer selectedVideo={video}/>
-                <RelatedVideos videoId={videoId} setVideo={setVideo}/>
-                <h3>Must Be Signed in to Comment</h3>
+                <div className='container-fluid'>
+                    <div className='col-xs-7 '>
+                        <VideoPlayer selectedVideo={video}/>
+                    </div>
+                    <div className='col-xs-5 '>
+                        <RelatedVideos videoId={videoId} setVideo={setVideo}/>
+                    </div>
+                </div>
+                <div className='col-xs-12'>
+                    <h3>Must Be Signed in to Comment</h3>
+                    <CommentList videoId={videoId} />
+                </div>
                 {/* <CommentForm videoId={videoId} user={user} token={token} config={config} /> */}
-                <CommentList videoId={videoId} />
+                {/* <div className=''>
+                </div> */}
             </div>
         );
     }
