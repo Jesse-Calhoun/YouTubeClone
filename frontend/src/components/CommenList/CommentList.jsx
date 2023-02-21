@@ -19,7 +19,7 @@ const CommentList = ({ videoId }) => {
     let commentList = comments.map((comment) => <Comment comment={comment}/>)
     
     return ( 
-        <div>
+        <div className='comments'>
             <h2>Comments List</h2>
             {commentList.reverse()}
         </div>

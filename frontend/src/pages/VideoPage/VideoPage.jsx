@@ -29,15 +29,15 @@ const VideoPage = ({ }) => {
     return ( 
         <div>
             <div className='flex-container'>
-                <div className='col-xs-7 container'>
+                <div className='col-sm-8 container'>
                     <VideoPlayer selectedVideo={video}/>
                 </div>
-                <div className='col-xs-5 container'>
+                <div className='col-sm-4 container'>
                     <RelatedVideos videoId={videoId} setVideo={setVideo}/>
                 </div>
             </div>
             <div className='col-xs-12'>
-                {token ?  <CommentForm videoId={videoId} user={user} token={token} config={config} /> :  <h3>Must Be Signed in to Comment</h3>}
+                {token ?  <CommentForm videoId={videoId} user={user} token={token} config={config} /> :  <h2>Must Be Signed in to Comment</h2>}
                 <CommentList videoId={videoId} />
             </div>
         </div>

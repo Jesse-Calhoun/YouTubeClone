@@ -32,11 +32,11 @@ const CommentForm = ({ videoId, user, token, config }) => {
 
   
   return (
-        <form onSubmit={handleNewComment}>
-          <label>Comment</label>
-          <div className='comment-form'>
+        <form onSubmit={handleNewComment} className='comment-form'>
+          <label><h2>Comment</h2></label>
+          <div>
             <input placeholder="Must be signed in to comment." value={comment} onChange={(event) => setComment(event.target.value)} className='comment-bar'/>
-            <button type='submit'>Post</button>
+            <button type='submit' className='comment-bar'>Post</button>
           </div>
         </form>
       );
