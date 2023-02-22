@@ -22,6 +22,7 @@ const VideoPage = ({ }) => {
 
     useEffect(()=>{
         getVideo();
+        window.scrollTo(0,0)
     }, [videoId])
 
 
