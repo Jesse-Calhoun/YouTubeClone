@@ -24,11 +24,7 @@ const CommentForm = ({ videoId, user, token, config }) => {
           dislikes: 0,
       };
       addNewComment(newComment);
-<<<<<<< HEAD
-      event.target.reset();
-=======
-      setComment('')
->>>>>>> ebb533756c7dc3548e15a5da815dd300c7edd931
+      setComment('');
     }
     else{
       alert('Must be signed in to comment.')
